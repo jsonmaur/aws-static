@@ -12,7 +12,7 @@ resource "aws_lambda_function" "rewrite" {
   filename = "${data.archive_file.rewrite.output_path}"
   source_code_hash = "${data.archive_file.rewrite.output_base64sha256}"
   role = "${aws_iam_role.main.arn}"
-  runtime = "nodejs6.10"
+  runtime = "nodejs10.x"
   handler = "index.handler"
   memory_size = 128
   timeout = 3
